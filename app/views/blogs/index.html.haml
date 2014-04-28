@@ -22,13 +22,22 @@
   %tr
     %th Title
 
+%br
+
+= link_to 'New Blog', new_blog_path
+
 :coffee
   $ ->
     $.getJSON '/blogs', (blogs) ->
       for blog in blogs
         $('.json-target').append "<tr><td>" + blog.title + "</td></tr>"
 
-%br
-
-
-= link_to 'New Blog', new_blog_path
+:javascript
+  $(function() {
+    $.getJSON('/blogs', function(blogs) {
+      for (var i = 0; i < blogs.length; i++) {
+        blog = blogs[i];
+        $('.json-target').append("<tr><td>" + blog.title + "</td></tr>");
+      }
+    });
+  });
