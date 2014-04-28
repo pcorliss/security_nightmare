@@ -28,6 +28,7 @@ group :development, :test do
   gem 'simplecov', :require => false
 
   gem 'spring'
+  gem 'brakeman', :require => false
   #gem 'jasmine'
   #gem 'jasminerice'
 

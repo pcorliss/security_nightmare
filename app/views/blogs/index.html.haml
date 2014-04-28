@@ -26,11 +26,17 @@
 
 = link_to 'New Blog', new_blog_path
 
+-#= image_tag 'http://media.giphy.com/media/3nkGvxiTvKU24/giphy.gif'
+-#%img{src: 'javascript:console.log("Foo");'}
+-#%img{src: '"><script>console.log("Foo")</script><img src="'}
+
 :coffee
   $ ->
     $.getJSON '/blogs', (blogs) ->
       for blog in blogs
         $('.json-target').append "<tr><td>" + blog.title + "</td></tr>"
+
+    #$('body').append("<img src=\"javascript:console.log('foo');\">")
 
 :javascript
   $(function() {
