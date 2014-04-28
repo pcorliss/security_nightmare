@@ -4,7 +4,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    sortby = params[:sortby] || 'title'
+    @blogs = Blog.all.order("#{sortby} ASC")
   end
 
   # GET /blogs/1
