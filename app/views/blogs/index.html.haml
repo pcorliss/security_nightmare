@@ -37,6 +37,8 @@
         $('.json-target').append "<tr><td>" + blog.title + "</td></tr>"
 
     #$('body').append("<img src=\"javascript:console.log('foo');\">")
+    $('body').append("<a href=\"javascript:console.error('XSS Link Vuln')\">Click Me to Exploit</a>")
+    # The above can also be exploited via link_to
 
 :javascript
   $(function() {
